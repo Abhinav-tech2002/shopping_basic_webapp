@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - Online Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="logo">ShopEase</h1>
+      <input type="text" id="search-input" placeholder="Search products..." />
+    </div>
+  </header>
+
+  <main>
+    <!-- Filter Sidebar -->
+    <aside class="filters">
+      <div class="filter-header">
+        <h2>Filters</h2>
+        <button id="clear-filters">Clear All</button>
+      </div>
+
+      <!-- Brand Filter -->
+      <div class="filter-group">
+        <h3>Brand</h3>
+        <label><input type="checkbox" name="brand" value="Nike" /> Nike</label>
+        <label><input type="checkbox" name="brand" value="Adidas" /> Adidas</label>
+        <label><input type="checkbox" name="brand" value="Puma" /> Puma</label>
+        <label><input type="checkbox" name="brand" value="Levi's" /> Levi's</label>
+        <label><input type="checkbox" name="brand" value="Zara" /> Zara</label>
+      </div>
+
+      <!-- Color Filter -->
+      <div class="filter-group">
+        <h3>Color</h3>
+        <label><input type="checkbox" name="color" value="Black" /> Black</label>
+        <label><input type="checkbox" name="color" value="White" /> White</label>
+        <label><input type="checkbox" name="color" value="Red" /> Red</label>
+        <label><input type="checkbox" name="color" value="Blue" /> Blue</label>
+        <label><input type="checkbox" name="color" value="Green" /> Green</label>
+      </div>
+
+      <!-- Item Type Filter -->
+      <div class="filter-group">
+        <h3>Item Type</h3>
+        <label><input type="checkbox" name="type" value="Shoes" /> Shoes</label>
+        <label><input type="checkbox" name="type" value="T-Shirt" /> T-Shirt</label>
+        <label><input type="checkbox" name="type" value="Jacket" /> Jacket</label>
+        <label><input type="checkbox" name="type" value="Jeans" /> Jeans</label>
+        <label><input type="checkbox" name="type" value="Accessories" /> Accessories</label>
+      </div>
+
+      <!-- Price Range Filter -->
+      <div class="filter-group">
+        <h3>Price Range</h3>
+        <label><input type="checkbox" name="price" value="0-50" /> Under $50</label>
+        <label><input type="checkbox" name="price" value="50-100" /> $50 - $100</label>
+        <label><input type="checkbox" name="price" value="100-200" /> $100 - $200</label>
+        <label><input type="checkbox" name="price" value="200-9999" /> $200+</label>
+      </div>
+
+      <!-- Rating Filter -->
+      <div class="filter-group">
+        <h3>Rating</h3>
+        <label><input type="checkbox" name="rating" value="4" /> 4&#9733; &amp; above</label>
+        <label><input type="checkbox" name="rating" value="3" /> 3&#9733; &amp; above</label>
+        <label><input type="checkbox" name="rating" value="2" /> 2&#9733; &amp; above</label>
+      </div>
+
+      <!-- Sort -->
+      <div class="filter-group">
+        <h3>Sort By</h3>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Rating</option>
+          <option value="name">Name A-Z</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <section class="products">
+      <p id="result-count"></p>
+      <div id="product-grid" class="product-grid"></div>
+      <p id="no-results" class="no-results hidden">No products match your filters.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
