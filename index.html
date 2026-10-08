@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopEase - Online Shopping</title>
+  <meta name="theme-color" content="#f4f1eb" />
+  <meta name="description" content="A considered edit of everyday pieces, chosen to last." />
+  <title>Maison Form - The Considered Collection</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <div class="announcement">Complimentary delivery on orders over $150 <span aria-hidden="true">&middot;</span> Thoughtfully selected, always
+  </div>
+  <header class="site-header">
     <div class="header-container">
-      <h1 class="logo">ShopEase</h1>
-      <input type="text" id="search-input" placeholder="Search products..." />
+      <a class="logo" href="#top" aria-label="Maison Form home">MAISON <span>FORM</span></a>
+      <div class="search-wrap">
+        <label class="visually-hidden" for="search-input">Search the collection</label>
+        <input type="search" id="search-input" placeholder="Search the collection" autocomplete="off" />
+      </div>
+      <button class="bag-button" id="bag-button" type="button" aria-label="View your shopping bag">
+        <span>Bag</span><span class="bag-count" id="cart-count" aria-live="polite">0</span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <!-- Filter Sidebar -->
     <aside class="filters">
       <div class="filter-header">
@@ -83,13 +93,21 @@
     </aside>
 
     <!-- Product Grid -->
-    <section class="products">
-      <p id="result-count"></p>
+    <section class="products" aria-labelledby="collection-title">
+      <div class="collection-heading">
+        <div>
+          <p class="eyebrow">THE CONSIDERED COLLECTION <span> / </span> 01</p>
+          <h1 id="collection-title">A little more considered.</h1>
+          <p class="collection-description">Well-made favorites for wherever the day takes you.</p>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </div>
       <div id="product-grid" class="product-grid"></div>
       <p id="no-results" class="no-results hidden">No products match your filters.</p>
     </section>
   </main>
 
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
 </html>
